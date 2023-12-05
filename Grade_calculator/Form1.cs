@@ -35,6 +35,8 @@ namespace Grade_calculator
         string name_student ;
         string score_student;
 
+        int[] cp_score = new int[1];
+        int start = 0, stop, sub_arr_length;
         int max_idx , max_value , min_value , min_idx;
 
         // arr สำหรับเก็บการคำนวณ นศ.ที่ได้ A จำนวน n * 4 + ได้ B+ จำนวน n * 3.5 ..... ไปเรื่อยๆ
@@ -161,17 +163,14 @@ namespace Grade_calculator
     text_name_max.Text = $"{all_name[max_idx]}";
     text_point_max.Text = $"{all_score[max_idx]}";
 
+    // find min value by cp_arr and length = จำนวนที่เราได้ใส่ค่าเข้ามา ตัวนับคือ arr_index
+    cp_score = new int[arr_index];
+    stop = arr_index;
+    sub_arr_length = stop;
+    Array.Copy(all_score, start, cp_score, 0, sub_arr_length);
+    min_value = cp_score.Min();
     min_value = max_value;
-    //min value , index
-    for (int i = 0; i < arr_index; i++)
-    {
-        if (all_score[i] < min_value)
-        {
-            min_value = all_score[i];
-        }
-
-
-    }
+    
 
     min_idx = all_score.ToList().IndexOf(min_value);
 
