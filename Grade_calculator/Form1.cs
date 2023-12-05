@@ -169,7 +169,6 @@ namespace Grade_calculator
     sub_arr_length = stop;
     Array.Copy(all_score, start, cp_score, 0, sub_arr_length);
     min_value = cp_score.Min();
-    min_value = max_value;
     
 
     min_idx = all_score.ToList().IndexOf(min_value);
