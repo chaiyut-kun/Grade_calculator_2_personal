@@ -128,7 +128,7 @@ namespace Grade_calculator
                 text_F_box.Text = n_of_grade[7].ToString();
             }
 
-            text_avg_box.Text = $"{(double)all_grade.Sum() / (double)arr_index:0.00}";
+            text_avg_box.Text = ((double)all_grade.Sum() / (double)arr_index).ToString("0.00");
 
         }
 
